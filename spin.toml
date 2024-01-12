@@ -1,0 +1,17 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["Sohan <1119120+sohanmaheshwar@users.noreply.github.com>"]
+description = ""
+name = "testing-ghcr"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "testing-ghcr"
+
+[component.testing-ghcr]
+source = "target/testing-ghcr.wasm"
+exclude_files = ["**/node_modules"]
+[component.testing-ghcr.build]
+command = "npm run build"
